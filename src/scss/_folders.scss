@@ -1,0 +1,85 @@
+.folder {
+  width: 100vw;
+  height: 100vh;
+
+  grid-template-rows: 20% 80%;
+
+  .folder-container-tabs {
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 150px));
+    grid-auto-flow: column;
+
+    .folder-tab {
+      cursor: pointer;
+      background-color: $blue;
+      color: $white;
+      height: 60px;
+      text-align: center;
+      transition: all 0.5s ease;
+
+      display: grid;
+      place-items: center;
+
+      .folder-tab-name {
+        padding: 0px 9px 0px 9px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: grid;
+        pointer-events: none;
+      }
+
+      &:hover {
+        background-color: $yellow;
+        color: $blue;
+      }
+
+      &:first-of-type {
+        background-color: $white;
+        color: $blue;
+      }
+    }
+  }
+
+  .folder-content {
+    width: 80%;
+    height: 100%;
+    margin-bottom: 40px;
+    background-color: $white;
+
+    display: grid;
+    place-items: center;
+
+    .folder-content-body {
+      width: 85%;
+      height: 83%;
+      font-size: 1.1rem;
+      overflow: auto;
+
+      display: none;
+      place-items: center;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 9px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #364cb1;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #283a8a;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.089);
+      }
+
+      &:first-of-type {
+        display: grid;
+      }
+    }
+  }
+}
